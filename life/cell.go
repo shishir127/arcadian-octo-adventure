@@ -5,15 +5,15 @@ type cell struct {
 	liveNeighbours int
 }
 
-func (c *cell) IsAlive() bool {
+func (c *cell) isAlive() bool {
 	return c.status == true
 }
 
-func (c *cell) RegisterLiveNeighbour() {
+func (c *cell) registerLiveNeighbour() {
 	c.liveNeighbours += 1
 }
 
-func (c *cell) NextGeneration() cell {
+func (c *cell) nextGeneration() cell {
 	switch {
 	case !c.status && c.liveNeighbours == 3:
 		return cell{status: true}
