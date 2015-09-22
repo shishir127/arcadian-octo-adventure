@@ -1,11 +1,11 @@
-package main
+package life
 
 import (
 	"math/rand"
 	"testing"
 )
 
-func TestisAlive(t *testing.T) {
+func TestIsAlive(t *testing.T) {
 	cell1 := cell{status: true}
 	status1 := cell1.isAlive()
 	if status1 != true {
@@ -18,7 +18,7 @@ func TestisAlive(t *testing.T) {
 	}
 }
 
-func TestregisterLiveNeighbour(t *testing.T) {
+func TestRegisterLiveNeighbour(t *testing.T) {
 	cell1 := cell{status: true}
 	previousLiveNeighbours := cell1.liveNeighbours
 	cell1.registerLiveNeighbour()
@@ -28,7 +28,7 @@ func TestregisterLiveNeighbour(t *testing.T) {
 	}
 }
 
-func TestCellnextGeneration(t *testing.T) {
+func TestCellNextGeneration(t *testing.T) {
 	deadCell := cell{status: false, liveNeighbours: 3}
 	nextGeneration1 := deadCell.nextGeneration()
 	if !nextGeneration1.isAlive() {

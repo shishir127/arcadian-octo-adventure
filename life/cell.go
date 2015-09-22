@@ -1,4 +1,4 @@
-package main
+package life
 
 type cell struct {
 	status         bool
